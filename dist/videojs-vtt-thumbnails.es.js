@@ -283,18 +283,19 @@ var vttThumbnailsPlugin = /*#__PURE__*/function () {
     var xPos = percent * width;
     var thumbnailWidth = parseInt(currentStyle.width, 10);
     var halfthumbnailWidth = thumbnailWidth >> 1;
-    var marginRight = width - (xPos + halfthumbnailWidth);
-    var marginLeft = xPos - halfthumbnailWidth;
-
-    if (width < thumbnailWidth) {
-      this.thumbnailHolder.style.transform = 'translateX(' + (thumbnailWidth - width) / 2 * -1 + 'px) scale(0.4)';
-    } else if (marginLeft > 0 && marginRight > 0) {
-      this.thumbnailHolder.style.transform = 'translateX(' + (xPos - halfthumbnailWidth) + 'px) scale(0.4)';
-    } else if (marginLeft <= 0) {
-      this.thumbnailHolder.style.transform = 'translateX(' + 0 + 'px) scale(0.4)';
-    } else if (marginRight <= 0) {
-      this.thumbnailHolder.style.transform = 'translateX(' + (width - thumbnailWidth) + 'px) scale(0.4)';
-    }
+    this.thumbnailHolder.style.transform = 'translateX(' + (xPos - halfthumbnailWidth) + 'px) scale(0.4)';
+    /**
+    //Dont care about margin right now, need fix later
+        if (width < thumbnailWidth) {
+          this.thumbnailHolder.style.transform = 'translateX(' + (((thumbnailWidth - width) / 2) * -1) + 'px) scale(0.4)';
+        } else if (marginLeft > 0 && marginRight > 0) {
+          this.thumbnailHolder.style.transform = 'translateX(' + (xPos - halfthumbnailWidth) + 'px) scale(0.4)';
+        } else if (marginLeft <= 0) {
+          this.thumbnailHolder.style.transform = 'translateX(' + 0 + 'px) scale(0.4)';
+        } else if (marginRight <= 0) {
+          this.thumbnailHolder.style.transform = 'translateX(' + (width - thumbnailWidth) + 'px) scale(0.4)';
+        }
+    */
 
     if (this.lastStyle && this.lastStyle === currentStyle) {
       return;

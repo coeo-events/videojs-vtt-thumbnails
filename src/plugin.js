@@ -286,7 +286,11 @@ class vttThumbnailsPlugin {
     const halfthumbnailWidth = thumbnailWidth >> 1;
     const marginRight = width - (xPos + halfthumbnailWidth);
     const marginLeft = xPos - halfthumbnailWidth;
-
+    
+    this.thumbnailHolder.style.transform = 'translateX(' + (xPos - halfthumbnailWidth) + 'px) scale(0.4)';
+    
+/**
+//Dont care about margin right now, need fix later
     if (width < thumbnailWidth) {
       this.thumbnailHolder.style.transform = 'translateX(' + (((thumbnailWidth - width) / 2) * -1) + 'px) scale(0.4)';
     } else if (marginLeft > 0 && marginRight > 0) {
@@ -296,6 +300,7 @@ class vttThumbnailsPlugin {
     } else if (marginRight <= 0) {
       this.thumbnailHolder.style.transform = 'translateX(' + (width - thumbnailWidth) + 'px) scale(0.4)';
     }
+*/
 
     if (this.lastStyle && this.lastStyle === currentStyle) {
       return;
