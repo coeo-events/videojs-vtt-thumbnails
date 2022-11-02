@@ -288,13 +288,13 @@ class vttThumbnailsPlugin {
     const marginLeft = xPos - halfthumbnailWidth;
 
     if (width < thumbnailWidth) {
-      this.thumbnailHolder.style.transform = 'scale(0.5) translateX(' + (((thumbnailWidth - width) / 2) * -1) + 'px)';
+      this.thumbnailHolder.style.transform = 'translateX(' + (((thumbnailWidth - width) / 2) * -1) + 'px) scale(0.4)';
     } else if (marginLeft > 0 && marginRight > 0) {
-      this.thumbnailHolder.style.transform = 'scale(0.5) translateX(' + (xPos - halfthumbnailWidth) + 'px)';
+      this.thumbnailHolder.style.transform = 'translateX(' + (xPos - halfthumbnailWidth) + 'px) scale(0.4)';
     } else if (marginLeft <= 0) {
-      this.thumbnailHolder.style.transform = 'scale(0.5) translateX(' + 0 + 'px)';
+      this.thumbnailHolder.style.transform = 'translateX(' + 0 + 'px) scale(0.4)';
     } else if (marginRight <= 0) {
-      this.thumbnailHolder.style.transform = 'scale(0.5) translateX(' + (width - thumbnailWidth) + 'px)';
+      this.thumbnailHolder.style.transform = 'translateX(' + (width - thumbnailWidth) + 'px) scale(0.4)';
     }
 
     if (this.lastStyle && this.lastStyle === currentStyle) {
